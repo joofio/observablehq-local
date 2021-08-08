@@ -1,0 +1,48 @@
+{
+  "name": "sphericalcontour",
+  "version": "1.0.0",
+  "description": "Standalone version of the Spherical contours notebook",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c && cp src/index.html public/ && cp src/favicon.ico public/",
+    "clean": "rm -rf node_modules public vendor",
+    "data": "rm -rf public/data && mkdir -p public/data && node bin/download-data.js",
+    "deploy": "now",
+    "notebook": "rm -f vendor/*notebook.tgz && timestamp=$(date \"+%s\") && mkdir -p vendor && curl -o vendor/${timestamp}_notebook.tgz $npm_package_config_notebook && yarn add --optional aaa_notebook@file:vendor/${timestamp}_notebook.tgz",
+    "notebook:comment": "echo \"In 'notebook' script above, timestamp is a hack to avoid using local cache - see https://github.com/yarnpkg/yarn/issues/2165. No need for that with npm.\"",
+    "preserve": "yarn build",
+    "serve": "http-server public/",
+    "setup": "yarn notebook && yarn && yarn data",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "download-data": "bin/download-data.js"
+  },
+  "config": {
+    "notebook": "https://api.observablehq.com/@fil/spherical-contours.tgz?v=3"
+  },
+  "engines": {
+    "node": ">=10.x"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@observablehq/runtime": "^4.4.3",
+    "d3": "5.x",
+    "d3-geo-projection": "2.x",
+    "d3-geo-voronoi": "1.5.x",
+    "d3-require": "^1.2.3",
+    "http-server": "^0.12",
+    "now": "^16.2.0",
+    "request": "^2.88.0",
+    "rollup": "^1.21.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.1"
+  },
+  "optionalDependencies": {
+    "aaa_notebook": "file:vendor/1628443196_notebook.tgz"
+  }
+}
