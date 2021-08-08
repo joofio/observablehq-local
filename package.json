@@ -19,7 +19,7 @@
     "download-data": "bin/download-data.js"
   },
   "config": {
-    "notebook": "https://api.observablehq.com/@fil/spherical-contours.tgz?v=3"
+    "notebook": "https://api.observablehq.com/@d3/sunburst.tgz?v=3"
   },
   "engines": {
     "node": ">=10.x"
@@ -43,6 +43,6 @@
     "rollup-plugin-terser": "^5.1.1"
   },
   "optionalDependencies": {
-    "aaa_notebook": "file:vendor/1628443196_notebook.tgz"
+    "aaa_notebook": "file:vendor/1628443500_notebook.tgz"
   }
 }

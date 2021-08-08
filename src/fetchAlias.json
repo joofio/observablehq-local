@@ -1,4 +1,4 @@
 {
-  "https://gist.githubusercontent.com/Fil/6bc12c535edc3602813a6ef2d1c73891/raw/3ae88bf307e740ddc020303ea95d7d2ecdec0d19/points.json": "data/points.json",
-  "https://unpkg.com/visionscarto-world-atlas/world/110m_land.geojson": "data/110m_land.geojson"
+  "https://static.observableusercontent.com/files/e65374209781891f37dea1e7a6e1c5e020a3009b8aedf113b4c80942018887a1176ad4945cf14444603ff91d3da371b3b0d72419fa8d2ee0f6e815732475d5de?response-content-disposition=attachment%3Bfilename*%3DUTF-8%27%27flare-2.json": "data/flare-2.json"
+  
 }
